@@ -31,7 +31,6 @@ function PostList(props) {
                         onClick={() => {
                             onClickItem(post); // post를 넣어주면 post.id 링크로 이동합니다.
                             // MainPage에서 onClickItem 선언 시 post/${props.id}로 이동하라고 명시
-                            
                         }}
                     />
                 );

@@ -25,7 +25,7 @@ function App(props) {
     return (
         // React DOM Router를 이용하여 path 설정
         <BrowserRouter>
-            <MainTitleText>KaKao Academy of Gachon Univ. </MainTitleText>
+            <MainTitleText >KaKao Academy of Gachon Univ. </MainTitleText>
             {/* route path에 명시된 링크로 이동 시 route의 내용만 변경해줍니다. */}
             <Routes>
                 <Route index element={<MainPage />} />

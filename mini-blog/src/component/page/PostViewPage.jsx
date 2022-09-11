@@ -51,7 +51,6 @@ function PostViewPage(props) {
     const navigate = useNavigate();
     // useParams을 통해 현재링크의 post/{?} 마지막 파라미터를 받아옵니다.
     const { postId } = useParams();
-
     const data = JSON.parse(localStorage.getItem('user'));
     
     // data.json에서 위에서 받아온 param의 값과 같은 것이 있는지 없는지 확인
@@ -66,19 +65,20 @@ function PostViewPage(props) {
     const writeComment = comment =>{
         console.log('댓글 추가 함수 호출')
 
+        // 수정 및 추가
         post.comments.push(
             {id: post.comments.length > 0 ? post.comments[post.comments.length-1].id+1 : post.id*10+1,
             content : comment,
             }
         )
 
+        // json에서 교체
         data.find((item) => {
             return item.id == post.id;
         }).comments = post.comments;
-        
+
+        // update
         localStorage.setItem('user', JSON.stringify(data))
-
-
     }
 
     return (

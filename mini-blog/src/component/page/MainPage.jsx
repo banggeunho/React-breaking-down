@@ -25,7 +25,6 @@ const Container = styled.div`
         }
     }
 `;
-
 function MainPage(props) {
     // 해당 링크를 이동하라는 함수입니다.
     const navigate = useNavigate();
