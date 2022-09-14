@@ -6,7 +6,10 @@ import TodosContianer
 function App() {
   return (
     <div>
-      <CounterContainer/>
+      
+      <h1> React-redux toolkit - 출석부</h1>
+      {/* <hr/>
+      <CounterContainer/> */}
       <hr/>
       <TodosContianer/>
     </div>

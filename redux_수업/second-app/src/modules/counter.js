@@ -1,3 +1,5 @@
+import { createSlice } from "@reduxjs/toolkit";
+
 const SET_DIFF = 'counter/SET_DIFF';
 const INCREASE = 'counter/INCREASE';
 const DECREASE = 'counter/DECREASE';
@@ -11,15 +13,34 @@ const initialState = {
     diff: 1
 };
 
-export default function counter(state=initialState, action){
-    switch(action.type){
-        case SET_DIFF:
-            return{ ...state, diff: action.diff};
-        case INCREASE:
-            return{ ...state, number: state.number + state.diff};
-        case DECREASE:
-            return{...state, number: state.number - state.diff};
-        default:
-            return state;
+// export default function counter(state=initialState, action){
+//     switch(action.type){
+//         case SET_DIFF:
+//             return{ ...state, diff: action.diff};
+//         case INCREASE:
+//             return{ ...state, number: state.number + state.diff};
+//         case DECREASE:
+//             return{...state, number: state.number - state.diff};
+//         default:
+//             return state;
+//     }
+// }
+
+const counterSlice =  createSlice({
+    name : 'counter',
+    initialState : initialState,
+    reducers : {
+        SET_DIFF:(state, action) => {
+            state.diff =  action.diff;
+        },
+        INCREASE:(state, action) => {
+            state.number = state.number + state.diff;
+        },
+        DECREASE:(state, action) => {
+            state.number = state.number - state.diff;
+        }
     }
-}
+});
+
+export default counterSlice;
+

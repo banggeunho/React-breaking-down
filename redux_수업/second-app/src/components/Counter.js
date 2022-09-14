@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from '@mui/material/Button';
+import { TextField } from '@mui/material';
 
 function Counter({ number, diff, onIncrease, onDecrease, onSetDiff }) {
   const onChange = e => {
@@ -8,11 +10,20 @@ function Counter({ number, diff, onIncrease, onDecrease, onSetDiff }) {
   return (
     <div>
       <h1>{number}</h1>
-      <h2>number</h2>
       <div>
-        <input type="number" value={diff} min="1" onChange={onChange} />
-        <button onClick={onIncrease}>+</button>
-        <button onClick={onDecrease}>-</button>
+      <TextField
+          id="filled-number"
+          label="Number"
+          type="number"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          variant="outlined"
+          value = {diff}
+          onChange = {onChange}
+        />
+        <Button variant="contained" size="small" onClick={onIncrease}>+</Button>
+        <Button variant="contained" size="small"  onClick={onDecrease}>-</Button>
       </div>
     </div>
   );
