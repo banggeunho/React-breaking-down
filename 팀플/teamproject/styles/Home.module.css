@@ -74,6 +74,8 @@
 }
 
 .card {
+  width: 300px;
+  height: 200px;
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
@@ -82,7 +84,6 @@
   border: 1px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
 }
 
 .header {
@@ -116,8 +117,9 @@
 }
 
 .logo {
-  height: 1em;
+  height: 5em;
   margin-left: 0.5rem;
+  display:flex;
 }
 
 @media (max-width: 600px) {

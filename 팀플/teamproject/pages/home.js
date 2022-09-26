@@ -11,7 +11,7 @@ function HomeContainer() {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => {
-      console.log("끄기!")
+      // console.log("끄기!")
       setOpen(false)};
 
   return (
@@ -29,17 +29,17 @@ function HomeContainer() {
           
           <SurveyPopup open={open} handleClose={handleClose}/>
 
-            <Button onClick={() => {handleOpen()}}>
+            <Button sx={{color:'black'}} onClick={() => {handleOpen()}}>
               <a className={styles.card}>
-                <h2>[메뉴1] 텍스트설문 &rarr;</h2>
+                <h2>설문생성 &rarr;</h2>
                 <p>당신만의 설문을 만들어보세요.</p>
               </a>
             </Button>
 
-            <Link href="/menu/menu2" >
+            <Link href="/tutorial" >
             <a className={styles.card}>
-              <h2>[메뉴2] 캬캬캬캬캬 &rarr;</h2>
-              <p>당신의 감동을 직접 전하세요.</p>
+              <h2>튜토리얼 &rarr;</h2>
+              <p>우리가 도와줄게요!</p>
             </a>
           </Link>
 
